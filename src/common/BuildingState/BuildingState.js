@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./BuildingState.scss";
 import _ from "underscore";
+import { buildingStateConstants } from "../../constants/stringConstants";
 
-export default function BuildingState({ textData, loadingText }) {
+export default function BuildingState({
+  textData,
+  loadingText = buildingStateConstants.LOADING_TEXT.CODE,
+}) {
   const [text, setText] = useState("");
   const [loadingData, setLoadingData] = useState({
     text: loadingText,
@@ -68,7 +72,7 @@ export default function BuildingState({ textData, loadingText }) {
     setTimeout(() => {
       setTransitionCompleted(
         setTextTransition({
-          textToPrint: textData || DEFAULT_TEXT,
+          textToPrint: textData || buildingStateConstants.TEXTS.CODE,
           setText,
           setIndex,
           index,
@@ -113,5 +117,3 @@ export default function BuildingState({ textData, loadingText }) {
     </div>
   );
 }
-
-const DEFAULT_TEXT = `the build texts\nArt is key\nsdnf sd fsdvdfvsv sdfvsfsdfsv\nthe build texts\nArt is key\nsdnf sd fsdvdfvsv sdfvsfsdfsv\nthe build texts\nArt is key\nsdnf sd fsdvdfvsv sdfvsfsdfsv\nthe build texts\nArt is key\nsdnf sd fsdvdfvsv sdfvsfsdfsv`;
