@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./BuildingState.scss";
 import _ from "underscore";
 import { buildingStateConstants } from "../../constants/stringConstants";
+import { buildingStateDelays } from "../../constants/numberConstants";
 
 export default function BuildingState({
   textData,
@@ -17,11 +18,9 @@ export default function BuildingState({
   const [transitionCompleted, setTransitionCompleted] = useState(false);
 
   const setTextTransition = ({ setText, textToPrint, index, setIndex }) => {
-    //   const index = getIndex();
-    console.log(index, textToPrint);
     let text = "";
     const lines = textToPrint.split("\n");
-    const chars = lines[index.line].split("");
+    const chars = lines[index.line];
 
     if (lines.length > index.line) {
       text += lines
@@ -35,12 +34,7 @@ export default function BuildingState({
 
     if (chars.length > index.char - 1) {
       text +=
-        `${index.char !== 0 ? "\n" : ""}` +
-        chars
-          .slice(0, index.char)
-          .reduce((reducedText, currentChar, currentIndex) => {
-            return (reducedText += `${currentChar}`);
-          }, "");
+        `${index.char !== 0 ? "\n" : ""}` + chars.substring(0, index.char + 1);
     }
 
     setText(text);
@@ -60,7 +54,6 @@ export default function BuildingState({
   const updateLoadingData = (loadingText, loadingData, setLoadingData) => {
     const { dotLimit, currentDotCount } = loadingData;
     let text = `${loadingText}${"  .".repeat(currentDotCount)}`;
-    console.log(text);
     setLoadingData({
       ...loadingData,
       text,
@@ -78,7 +71,7 @@ export default function BuildingState({
           index,
         })
       );
-    }, 20);
+    }, buildingStateDelays.TEXT);
     return () => {};
   }, [index]);
 
@@ -86,20 +79,20 @@ export default function BuildingState({
     if (transitionCompleted) {
       setTimeout(() => {
         updateLoadingData(loadingText, loadingData, setLoadingData);
-      }, 500);
+      }, buildingStateDelays.LOADING_TEXT);
     }
   }, [loadingData, transitionCompleted]);
 
   return (
-    <div className="d-flex flex-column building__state">
+    <div className="d-flex position-absolute flex-column building__state">
       <div className="d-flex building__state__action__bar">
         <div className="action__circle action__circle-close"></div>
         <div className="action__circle action__circle-minimize"></div>
         <div className="action__circle action__circle-maximize"></div>
       </div>
-      <div className="building__state__container">
+      <div className="w-100 h-100 d-flex flex-1 overflow-hidden position-relative  building__state__container">
         {!transitionCompleted && (
-          <code className="building__state__code">
+          <code className=" w-100 position-absolute building__state__code">
             {text.split("\n").map((textNode) => {
               return (
                 <>
