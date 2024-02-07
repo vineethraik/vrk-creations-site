@@ -23,3 +23,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.theme {
+  &__dark {
+    --primary-color-normal: #5c38d2;
+    --primary-color-dark-1: #4427a4;
+    --primary-color-light-1: #7c63cf;
+
+    --gray: #c2c2c2;
+  }
+  &__light {
+    --primary-color-normal: #5c38d2;
+    --primary-color-dark-1: #4427a4;
+    --primary-color-light-1: #7c63cf;
+
+    --gray: #c2c2c2;
+  }
+}
