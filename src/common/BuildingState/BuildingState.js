@@ -87,7 +87,7 @@ export default function BuildingState({
 
   return (
     <div
-      className={`d-flex position-absolute flex-column building__state ${containerClassName}`}
+      className={`d-flex flex-column building__state ${containerClassName}`}
       style={containerStyle}
     >
       <div className="d-flex building__state__action__bar">
