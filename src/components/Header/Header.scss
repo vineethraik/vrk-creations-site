@@ -1,0 +1,178 @@
+.page__header {
+  background-color: var(--primary-color-normal);
+  gap: 10px;
+  padding: 10px;
+  &::after {
+    content: "";
+    position: absolute;
+    background: transparent;
+    opacity: 0;
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 6px;
+    box-shadow: 0 0 15px -2px black;
+    pointer-events: none;
+  }
+
+  &__nav {
+    gap: 10px;
+    width: 100%;
+    max-width: max-content;
+    transition: all 0.5s 0.5s;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      transition: border-width 0.5s 0.4s;
+      right: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-color: var(--primary-color-normal);
+      border-width: 1.1rem 0rem;
+      border-style: solid;
+      border-left-color: transparent;
+      border-right-width: 0 !important;
+    }
+    &--dropdown {
+      top: calc(100% + 15px);
+      left: -50%;
+      background-color: var(--primary-color-normal);
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: calc(1rem + 6px);
+        width: 0;
+        /* background: black; */
+        height: 0;
+        z-index: 1000;
+        border: 10px solid transparent;
+        border-top-width: 0;
+        border-bottom-color: var(--primary-color-dark-1);
+      }
+      .page__header__nav__item {
+        &:hover {
+          background: var(--primary-color-dark-1);
+        }
+      }
+    }
+    &__item {
+      min-width: max-content;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 0.25rem 0.35rem;
+      border: 1px solid transparent;
+      transition: all 500ms;
+      transition: margin-left 0.5s 1s;
+      // background-color: #7b6c6c;
+      &.selected__route {
+        position: relative;
+        overflow: hidden;
+        min-width: max-content;
+        border-color: white;
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   background: transparent;
+        //   top: 0;
+        //   left: 0;
+        //   width: calc(100% - 0px);
+        //   height: calc(100% - 0px);
+        //   border-radius: 8px;
+        //   box-shadow: 0 0 8px 8px white;
+        //   pointer-events: none;
+        // }
+      }
+
+      &__status {
+        width: min-content;
+        height: fit-content;
+        top: 2px;
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+        line-height: 69%;
+        color: red;
+        font-size: 0.4rem;
+      }
+    }
+  }
+
+  &__menu {
+    display: none !important;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0.35rem;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color-dark-1);
+    transition-duration: 500ms;
+    box-shadow: 0 0 3px 0 black;
+    &:hover {
+      background-color: var(--primary-color-light-1);
+    }
+    &__icon {
+      filter: brightness(100%) saturate(0%) invert(100%) sepia(0%) saturate(0%)
+        hue-rotate(286deg) brightness(103%) contrast(103%);
+      -webkit-user-drag: none;
+    }
+  }
+
+  &__user {
+    width: 2rem;
+    height: 2rem;
+    margin: 0 0.35rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition-duration: 500ms;
+    box-shadow: 0 0 3px 0 black;
+    -webkit-user-drag: none;
+    &:hover {
+      background-color: var(--gray);
+    }
+    &__icon {
+      -webkit-user-drag: none;
+    }
+  }
+}
+
+// .shimmer {
+//   background: #e2e3e4;
+//   background-image: linear-gradient(
+//     to right,
+//     #e2e3e4 0%,
+//     #f6f7f8 20%,
+//     #e2e3e4 40%,
+//     #e2e3e4 100%
+//   );
+//   background-repeat: no-repeat;
+//   animation: shim infinite 1.2s linear;
+// }
+
+// @keyframes shim {
+//   0% {
+//     background-position: -100vw 0;
+//   }
+//   100% {
+//     background-position: 100vw 0;
+//   }
+// }
+
+@media only screen and (max-width: 750px) {
+  .page__header {
+    &__nav {
+      width: 0;
+      &::after {
+        border-width: 1.1rem 20rem;
+      }
+    }
+    &__menu {
+      display: flex !important;
+    }
+  }
+}

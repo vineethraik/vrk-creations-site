@@ -5,8 +5,10 @@ import { buildingStateConstants } from "../../constants/stringConstants";
 import { buildingStateDelays } from "../../constants/numberConstants";
 
 export default function BuildingState({
-  textData,
+  textData = buildingStateConstants.TEXTS.CODE,
   loadingText = buildingStateConstants.LOADING_TEXT.CODE,
+  containerClassName,
+  containerStyle,
 }) {
   const [text, setText] = useState("");
   const [loadingData, setLoadingData] = useState({
@@ -84,7 +86,10 @@ export default function BuildingState({
   }, [loadingData, transitionCompleted]);
 
   return (
-    <div className="d-flex position-absolute flex-column building__state">
+    <div
+      className={`d-flex flex-column building__state ${containerClassName}`}
+      style={containerStyle}
+    >
       <div className="d-flex building__state__action__bar">
         <div className="action__circle action__circle-close"></div>
         <div className="action__circle action__circle-minimize"></div>
