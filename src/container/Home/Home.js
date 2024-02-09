@@ -4,7 +4,11 @@ import React from "react";
 
 export default function Home() {
   return (
-    <PageContainer>
+    <PageContainer
+      containerClassName={
+        "d-flex flex-grow-1 justify-content-center align-items-center"
+      }
+    >
       <BuildingState />
     </PageContainer>
   );
