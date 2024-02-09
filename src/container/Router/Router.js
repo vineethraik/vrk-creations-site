@@ -1,35 +1,25 @@
-import PageContainer from "container/PageContainer/PageContainer";
-// import { RouterProvider } from "react-router-dom";
-import Home from "container/Home/Home";
 import React from "react";
-import {
-  BrowserRouter,
-  // createBrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-// import { createBrowserRouter } from "../../../node_modules/react-router-dom/dist/index";
-// const public_url = process.env.PUBLIC_URL && "";
-// const router = createBrowserRouter([
-//   {
-//     path: `${public_url}/`,
-//     element: <Home />,
-//   },
-//   {
-//     path: `${public_url}/test`,
-//     element: <PageContainer>Test</PageContainer>,
-//   },
-// ]);
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { pageRoutes } from "constants/routeConstants";
 
-export default function Router() {
+export default function Router({ className }) {
   return (
-    <>
+    <div className={className}>
       <BrowserRouter basename="/site">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/test" element={<PageContainer>Test</PageContainer>} />
+          {pageRoutes.map((route, index) => {
+            return (
+              <Route
+                key={index}
+                exact
+                path={route.path}
+                element={route.element}
+              />
+            );
+          })}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
