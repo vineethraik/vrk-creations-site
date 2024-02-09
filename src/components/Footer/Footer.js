@@ -1,13 +1,12 @@
+import React from "react";
+import "./Footer.scss";
+
 export default function Footer() {
   return (
-    <div className="d-flex position-absolute w-100">Made By Vineeth Rai K</div>
+    <div className="footer d-flex p-1 position-relative w-100">
+      <div className="footer__crater__tag d-flex justify-content-center">
+        Created By Vineeth Rai
+      </div>
+    </div>
   );
 }
-
-// display: flex;
-//     position: absolute;
-//     bottom: 0px;
-//     background: blue;
-//     color: white;
-//     width: 100%;
-//     height: max-content;
