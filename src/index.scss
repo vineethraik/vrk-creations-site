@@ -48,3 +48,16 @@ code {
   }
   --gray: #c2c2c2;
 }
+
+.color-danger {
+  color: var(--danger-color);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
