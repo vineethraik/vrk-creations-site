@@ -1,0 +1,130 @@
+.social__media__handle {
+  width: 100%;
+  background-color: var(--primary-color-light-2);
+  height: 65px;
+  border-radius: 5px;
+  padding: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow-x: auto;
+  &__box {
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    position: relative;
+    width: 45px;
+    border-radius: 4px;
+    background-color: var(--primary-color-light-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    transition-duration: 200ms;
+    &:hover {
+      margin-right: 20px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    @media screen and (max-width: 700px) {
+      & {
+        margin-right: 20px;
+        border-radius: 4px 0 0 4px;
+      }
+    }
+
+    &__add__new {
+      width: 30px;
+      filter: invert(71%) sepia(13%) saturate(841%) hue-rotate(157deg)
+        brightness(88%) contrast(94%);
+    }
+    &__icon {
+      width: 30px;
+
+      filter: invert(100%);
+    }
+    &__options {
+      &__container {
+        position: absolute;
+        display: flex;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition-duration: 200ms;
+        opacity: 0;
+        &:hover {
+          width: calc(100% + 20px);
+
+          opacity: 1;
+        }
+        @media screen and (max-width: 700px) {
+          & {
+            width: calc(100% + 20px);
+
+            opacity: 1;
+          }
+        }
+      }
+
+      width: 20px;
+      margin-left: auto;
+      background-color: #7c63cf79;
+
+      border-radius: 0 8px 8px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      &__item {
+        width: 10px;
+        aspect-ratio: 1;
+      }
+    }
+  }
+
+  &__form {
+    &__container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(#000000bb, #00000077);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    position: relative;
+    background: var(--primary-color-normal);
+    width: 500px;
+    max-width: calc(100% - 40px);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__input {
+      &__container {
+        box-shadow: 0 0 5px 1px black;
+        border-radius: 5px;
+        padding: 5px 0;
+      }
+    }
+    &__close__button {
+      position: absolute;
+      right: -20px;
+      top: -10px;
+      filter: invert(100%);
+    }
+  }
+}
