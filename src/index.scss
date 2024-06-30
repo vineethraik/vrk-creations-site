@@ -23,15 +23,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+* {
+  --grey-light1: #d2d2d2;
+  --grey: #c2c2c2;
+  --grey-dark1: #a2a2a2;
 
+  --white: #ffffff;
+}
 .theme {
   &__dark {
     --primary-color-normal: #5c38d2;
     --primary-color-dark-1: #4427a4;
     --primary-color-light-1: #7c63cf;
-    --primary-color-light-2:#b0a8f3;
-    --primary-color-light-3:#7daac3;
-    
+    --primary-color-light-2: #b0a8f3;
+    --primary-color-light-3: #7daac3;
 
     --danger-color: #940e0e;
   }
@@ -39,10 +44,8 @@ code {
     --primary-color-normal: #5c38d2;
     --primary-color-dark-1: #4427a4;
     --primary-color-light-1: #7c63cf;
-    --primary-color-light-2:#b0a8f3;
-    --primary-color-light-3:#7daac3;
-
-
+    --primary-color-light-2: #b0a8f3;
+    --primary-color-light-3: #7daac3;
 
     --danger-color: #fd5151;
   }
