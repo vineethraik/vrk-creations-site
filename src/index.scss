@@ -49,18 +49,29 @@ code {
 
     --danger-color: #fd5151;
   }
-  --gray: #c2c2c2;
 }
 
+.input{
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 3px;
+  background-color: var(--primary-color-dark-1);
+  color: var(--white);
+  box-shadow: 0 0 5px 1px white;
+}
 .color-danger {
   color: var(--danger-color);
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .hide-scrollbar {
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
