@@ -76,3 +76,12 @@ export const socialMediaTypes = {
     },
   },
 };
+
+export const formDataTypes = {
+  NAME: "name",
+  EMAIL: "email",
+  CONTACT: "contact",
+  CONTACT_HAS_WHATSAPP: "contact_has_whatsapp",
+  SOCIAL_MEDIA_HANDLES: "social_media_handles",
+  MESSAGE: "message",
+};

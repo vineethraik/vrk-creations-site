@@ -1,0 +1,14 @@
+.contact__us {
+  &__container {
+    border: 1px solid black;
+    box-shadow: 0 0 16px -2px black;
+    width: 500px;
+    max-width: calc(100% - 10px);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--primary-color-normal);
+    color: white;
+  }
+
+  
+}
