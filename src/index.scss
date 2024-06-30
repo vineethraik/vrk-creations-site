@@ -23,20 +23,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+* {
+  --grey-light1: #d2d2d2;
+  --grey: #c2c2c2;
+  --grey-dark1: #a2a2a2;
 
+  --white: #ffffff;
+}
 .theme {
   &__dark {
     --primary-color-normal: #5c38d2;
     --primary-color-dark-1: #4427a4;
     --primary-color-light-1: #7c63cf;
+    --primary-color-light-2: #b0a8f3;
+    --primary-color-light-3: #7daac3;
 
-    --gray: #c2c2c2;
+    --danger-color: #940e0e;
   }
   &__light {
     --primary-color-normal: #5c38d2;
     --primary-color-dark-1: #4427a4;
     --primary-color-light-1: #7c63cf;
+    --primary-color-light-2: #b0a8f3;
+    --primary-color-light-3: #7daac3;
 
-    --gray: #c2c2c2;
+    --danger-color: #fd5151;
   }
+}
+
+.gap-10{
+  gap: 10px;
+}
+.input{
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 3px;
+  background-color: var(--primary-color-dark-1);
+  color: var(--white);
+  box-shadow: 0 0 5px 1px white;
+}
+.color-danger {
+  color: var(--danger-color);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,0 +1,30 @@
+.scroll__selector {
+  &__container {
+    display: flex;
+    width: min-content; 
+  }
+
+  &__item {
+    scroll-snap-align: center;
+  }
+
+  &__arrow{
+        margin: 0 5px;
+    border-radius: 0 5px 5px 0;
+    background: var(--grey-light1);
+    cursor: pointer;
+    &.left{
+    border-radius:  5px 0 0 5px ;
+      
+    }
+    &.right{
+    border-radius: 0 5px 5px 0;
+      
+    }
+  }
+
+
+  display: flex;
+  box-shadow: 0 0 0 1px white;
+  transition-duration: 200ms;
+}
