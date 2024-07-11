@@ -5,7 +5,7 @@ import { pageRoutes } from "constants/routeConstants";
 export default function Router({ className }) {
   return (
     <div className={className}>
-      <BrowserRouter basename="/site">
+      <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
         <Routes>
           {pageRoutes.map((route, index) => {
             return (
