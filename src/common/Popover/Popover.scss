@@ -1,0 +1,71 @@
+.popover__container {
+  &--dropdown {
+    &::after {
+      content: "";
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: -11px;
+    border: 6px solid transparent;
+    border-color: transparent transparent white transparent;
+    }
+  }
+  &--dropdown-down-left {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      transform: translateX(50%);
+      top: -11px;
+      border: 6px solid transparent;
+      border-color: transparent transparent white transparent;
+    }
+  }
+  &--dropdown-down-right {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 16px;
+      transform: translateX(-50%);
+      top: -11px;
+      border: 6px solid transparent;
+      border-color: transparent transparent white transparent;
+    }
+  }
+  &--dropdown-up-left {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      transform: translateX(50%);
+      bottom: -11px;
+      border: 6px solid transparent;
+      border-color: white transparent transparent transparent;
+    }
+  }
+  &--dropdown-up-right {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 16px;
+      transform: translateX(-50%);
+      bottom: -11px;
+      border: 6px solid transparent;
+      border-color: white transparent transparent transparent;
+    }
+  }
+  
+  &--dropdown-up{
+    &::after {
+      content: "";
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+      bottom: -11px;
+      border: 6px solid transparent;
+      border-color: white transparent transparent transparent;
+    }
+  }
+  &--modal {
+  }
+}
