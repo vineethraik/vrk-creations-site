@@ -1,0 +1,19 @@
+.image__name__tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  &--name-tag {
+    padding: min(10px, 10%);
+    font-size: 100%;
+  }
+  &--image {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &--fallback {
+    border-radius: 50%;
+    padding: min(10px, 10%);
+    object-fit: cover;
+  }
+}
