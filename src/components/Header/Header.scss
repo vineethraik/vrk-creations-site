@@ -38,7 +38,7 @@
     }
     &--dropdown {
       top: calc(100% + 15px);
-      left: -50%;
+      right: -10px;
       background-color: var(--primary-color-normal);
       padding: 0.5rem;
       border-radius: 0.25rem;
@@ -46,7 +46,8 @@
         content: "";
         position: absolute;
         bottom: 100%;
-        left: calc(1rem + 6px);
+        right: 0;
+        transform: translateX(calc(-10px + -6px));
         width: 0;
         /* background: black; */
         height: 0;
@@ -131,11 +132,20 @@
     border-radius: 50%;
     transition-duration: 500ms;
     box-shadow: 0 0 3px 0 black;
+    // overflow: hidden;
     -webkit-user-drag: none;
     &:hover {
       background-color: var(--gray);
     }
     &__icon {
+      &__container {
+        width:100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+      width: 100%;
+      height: 100%;
       -webkit-user-drag: none;
     }
   }

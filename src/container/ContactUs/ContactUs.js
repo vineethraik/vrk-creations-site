@@ -2,7 +2,7 @@ import PageContainer from "container/PageContainer/PageContainer";
 import React, { useRef, useState } from "react";
 import "./ContactUs.scss";
 import { MediaHandleInput } from "components/MediaHandleInput/MediaHandleInput.js";
-import { submitContactUsRequest } from "container/services/contactUs.js";
+import { submitContactUsRequest } from "services/contactUs.js";
 import { useNavigate } from "react-router-dom";
 import { formDataTypes } from "constants/contactUsConstants.js";
 
