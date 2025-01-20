@@ -1,7 +1,10 @@
 import React from "react";
 import Home from "container/Home/Home";
-import PageContainer from "container/PageContainer/PageContainer";
 import { ContactUs } from "container/ContactUs/ContactUs";
+import { authRoles } from "./authOptionsConstants.js";
+import { LoginPage } from "container/Auth/LoginPage/LoginPage.js";
+import { PhoneLogin } from "container/Auth/PhoneLogin/PhoneLogin.js";
+import ProfilePage from "container/User/ProfilePage/ProfilePage.js";
 
 export const BUILD_STATUS = {
   COMING_SOON: "coming soon",
@@ -18,20 +21,36 @@ export const routeTags = {
   PROJECTS: "PROJECTS",
   ABOUT: "ABOUT",
   CONTACT_US: "CONTACT_US",
+  LOGIN: "LOGIN",
+  PROFILE: "PROFILE",
+  ADMIN: "ADMIN",
 };
+
+export const pageUrls = {
+  HOME: "/",
+  // SERVICES: "/services",
+  // PORTFOLIO: "/portfolio",
+  // PROFILES: "/profiles",
+  // PROJECTS: "/projects",
+  // ABOUT: "/about",
+  CONTACT_US: "/contact-us",
+  // LOGIN: "/login",
+  // PROFILE: "/profile",
+  // ADMIN: "/admin",
+}
 
 export const pageRoutes = [
   {
     name: "Home",
     tag: routeTags.HOME,
-    path: "/",
+    path: pageUrls.HOME,
     buildStatus: BUILD_STATUS.COMING_SOON,
     element: <Home />,
   },
   // {
   //   name: "Services",
   //   tag: routeTags.SERVICES,
-  //   path: "/services",
+  //   path: pageUrls.SERVICES,
   //   buildStatus: BUILD_STATUS.COMING_SOON,
   //   element: (
   //     <PageContainer
@@ -44,7 +63,7 @@ export const pageRoutes = [
   // {
   //   name: "Portfolio",
   //   tag: routeTags.PORTFOLIO,
-  //   path: "/portfolio",
+  //   path: pageUrls.PORTFOLIO,
   //   buildStatus: BUILD_STATUS.BETA,
   //   element: (
   //     <PageContainer
@@ -57,7 +76,7 @@ export const pageRoutes = [
   // {
   //   name: "Profiles",
   //   tag: routeTags.PROFILES,
-  //   path: "/profiles",
+  //   path: pageUrls.PROFILES,
   //   buildStatus: BUILD_STATUS.COMING_SOON,
   //   element: (
   //     <PageContainer
@@ -70,7 +89,7 @@ export const pageRoutes = [
   // {
   //   name: "Projects",
   //   tag: routeTags.PROJECTS,
-  //   path: "/projects",
+  //   path: pageUrls.PROJECTS,
   //   buildStatus: BUILD_STATUS.COMING_SOON,
   //   element: (
   //     <PageContainer
@@ -83,7 +102,7 @@ export const pageRoutes = [
   // {
   //   name: "About",
   //   tag: routeTags.ABOUT,
-  //   path: "/about",
+  //   path: pageUrls.ABOUT,
   //   buildStatus: BUILD_STATUS.NEW,
   //   element: (
   //     <PageContainer
@@ -96,8 +115,51 @@ export const pageRoutes = [
   {
     name: "Contact Us",
     tag: routeTags.CONTACT_US,
-    path: "/about",
+    path: pageUrls.CONTACT_US,
     buildStatus: BUILD_STATUS.NEW,
     element: <ContactUs />,
+  },
+];
+
+export const authUrls = {
+  login: "/auth/login",
+  logout: "/auth/logout",
+  profile: "/auth/profile",
+  admin: "/auth/admin",
+  phone_login: "/auth/phone_login",
+  oauth_login: ``,
+};
+
+export const authRoutes = [
+  {
+    name: "Login",
+    path: authUrls.login,
+    element: <LoginPage />,
+    access: [authRoles.ANONYMOUS],
+  },
+  {
+    name: "Phone Login",
+    path: authUrls.phone_login,
+    element: <PhoneLogin />,
+    access: [authRoles.ANONYMOUS],
+  },
+  {
+    name: "Logout",
+    path: authUrls.logout,
+    element: <div>logout</div>,
+    access: [authRoles.USER, authRoles.ADMIN],
+  },
+
+  {
+    name: "Profile",
+    path: authUrls.profile,
+    element: <ProfilePage/>,
+    access: [authRoles.USER, authRoles.ADMIN],
+  },
+  {
+    name: "Admin",
+    path: authUrls.admin,
+    element: <div>admin</div>,
+    access: [authRoles.ADMIN],
   },
 ];

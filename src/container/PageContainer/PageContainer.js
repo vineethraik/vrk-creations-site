@@ -7,12 +7,13 @@ export default function PageContainer({
   className,
   children,
   containerClassName,
+  disableAuthIcon = false,
 }) {
   return (
     <div
       className={`page__container d-flex flex-column overflow-auto  ${className}`}
     >
-      <Header />
+      <Header disableAuthIcon={disableAuthIcon} />
       <div className={`flex-grow-1 ${containerClassName}`}>{children}</div>
       <Footer />
     </div>

@@ -1,0 +1,57 @@
+.phone__login__page {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__auth {
+    &__container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__title {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    &__form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__label {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 10px;
+      }
+      &__input {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      &__button {
+        box-shadow: 0 0 5px 1px black;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        width: 300px;
+        background: linear-gradient(to bottom, #5c38d2cc, #5c38d24a);
+        margin-bottom: 20px;
+        color: white;
+      }
+      &__wrong__number__text {
+        color: blue;
+        cursor: pointer;
+        font-size: 12px
+      }
+    }
+  }
+}
