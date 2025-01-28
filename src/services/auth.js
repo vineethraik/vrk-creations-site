@@ -1,3 +1,16 @@
+export const logout = async () => {
+  return await fetch(`${process.env.REACT_APP_AUTH_API_URL}/logout`, {
+    method: "get",
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      return new Promise.resolve({
+        status: "error",
+        message: err.message,
+      });
+});
+};
+
 export const sendOTP = async (number) => {
   return await fetch(`${process.env.REACT_APP_AUTH_API_URL}/phone/otp`, {
     method: "POST",
