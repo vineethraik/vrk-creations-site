@@ -5,6 +5,7 @@ import { authRoles } from "./authOptionsConstants.js";
 import { LoginPage } from "container/Auth/LoginPage/LoginPage.js";
 import { PhoneLogin } from "container/Auth/PhoneLogin/PhoneLogin.js";
 import ProfilePage from "container/User/ProfilePage/ProfilePage.js";
+import Logout from "container/Auth/Logout/Logout.js";
 
 export const BUILD_STATUS = {
   COMING_SOON: "coming soon",
@@ -146,7 +147,7 @@ export const authRoutes = [
   {
     name: "Logout",
     path: authUrls.logout,
-    element: <div>logout</div>,
+    element: <Logout />,
     access: [authRoles.USER, authRoles.ADMIN],
   },
 

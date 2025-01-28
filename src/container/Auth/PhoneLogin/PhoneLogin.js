@@ -3,8 +3,12 @@ import "./PhoneLogin.scss";
 import PageContainer from "container/PageContainer/PageContainer.js";
 import { sendOTP, verifyOTP } from "services/auth.js";
 import { useTimeCounter } from "util/time.js";
+import { useNavigate } from "react-router-dom";
+import { pageUrls } from "constants/routeConstants.js";
 
 export const PhoneLogin = () => {
+  const navigate = useNavigate();
+
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
   const [formState, setFormState] = useState(formStateKeys.empty);
@@ -71,6 +75,7 @@ export const PhoneLogin = () => {
     console.log(otp);
     verifyOTP(phoneNumber, otp).then((res) => {
       if (res.status === "success") {
+        navigate(pageUrls.HOME);
       } else {
         alert("Error Verifying OTP");
       }

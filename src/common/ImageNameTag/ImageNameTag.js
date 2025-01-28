@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./ImageNameTag.scss";
 import person from "assets/person.svg";
 export default function ImageNameTag({
@@ -19,6 +19,17 @@ export default function ImageNameTag({
       ? ImageNameTagMode.NAME_TAG
       : ImageNameTagMode.FALLBACK
   );
+
+  useEffect(() => {
+    setMode(
+      !!imageSrc
+        ? ImageNameTagMode.IMAGE
+        : !!name
+        ? ImageNameTagMode.NAME_TAG
+        : ImageNameTagMode.FALLBACK
+    );
+  }, [imageSrc, name]);
+
 
   const styles = {
     width,
